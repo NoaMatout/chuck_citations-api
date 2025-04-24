@@ -33,7 +33,7 @@ pipeline {
                     ssh -o StrictHostKeyChecking=no vagrant@192.168.56.152 '
                         cd ~/prod.home.arpa && \
                         docker compose pull && \
-                        docker compose up -d
+                        docker compose up -d --force-recreate
                     '
                     '''
                 }
