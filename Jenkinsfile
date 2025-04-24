@@ -27,7 +27,7 @@ pipeline {
                 expression { return params.DEPLOY == 'Oui' }
             }
             steps {
-                sshagent(credentials: ['dind-to-prod']) {
+                sshagent(credentials: ['ssh-dind-prod']) {
                     sh '''
                     echo "[INFO] Connexion à la VM prod et redéploiement..."
                     ssh -o StrictHostKeyChecking=no vagrant@192.168.56.152 '
